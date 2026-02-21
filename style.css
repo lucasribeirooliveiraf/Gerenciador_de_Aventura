@@ -1,19 +1,23 @@
 body{
-    background-color: #0D2B45;
+    --bs-body-bg: #0D2B45;
     padding: 0;
     margin: 0;
-    transform: scale(1.3);
+    transform: scale(1);
 }
 
 .main_content{
-    width: 600px;
+    width: 710px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(20%);
     background-color: #FFD4A3;
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.304);
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.733);
     color: #0D2B45;
+}
+
+.text_editor{
+    padding: 0%;
 }
 
 .setings{
@@ -21,9 +25,12 @@ body{
     padding: 5px;
 }
 
+
+
 .text_editor_header{
     background-color: #D08159;
-    padding: 5px;
+    padding: 10px;
+    width: 100%;
 }
 
 .text_editor_header .btn{
@@ -47,8 +54,10 @@ body{
 }
 
 .content{
+    
     min-height: 300px;
     border: none;
-    padding: 20px;
+    padding: 5px;
+    margin: 0px;
 
 }

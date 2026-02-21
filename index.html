@@ -5,80 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Aventura</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     
 </head>
 <body>
-    <div class="main_content">
-       
-        <div class="text_editor">
-            <div class="text_editor_header">
-                <button type="button" class="btn" data-element="bold">
-                    <i class="fa fa-bold"></i>
-                </button>
+    <div class="container" style="padding: 0%;">
+        <div class="row">
+        <div class="col">
+            <div class="options"></div>
+        </div>
+        <div class="col">
+            <div class="main_content">
+                <div class="text_editor">
+                    <div class="text_editor_header">
+                        <button type="button" class="btn" data-element="bold">
+                            <i class="fa fa-bold"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="italic">
-                    <i class="fa fa-italic"></i>
-                </button>
+                        <button type="button" class="btn" data-element="italic">
+                            <i class="fa fa-italic"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="underline">
-                    <i class="fa fa-underline"></i>
-                </button>
+                        <button type="button" class="btn" data-element="underline">
+                            <i class="fa fa-underline"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="insertUnorderedList">
-                    <i class="fa fa-list-ul"></i>
-                </button>
+                        <button type="button" class="btn" data-element="insertUnorderedList">
+                            <i class="fa fa-list-ul"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="insertOrderedList">
-                    <i class="fa fa-list-ol"></i>
-                </button>
+                        <button type="button" class="btn" data-element="insertOrderedList">
+                            <i class="fa fa-list-ol"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="createLink">
-                    <i class="fa fa-link"></i>
-                </button>
+                        <button type="button" class="btn" data-element="createLink">
+                            <i class="fa fa-link"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="justifyLeft">
-                    <i class="fa fa-align-left"></i>
-                </button>
+                        <button type="button" class="btn" data-element="justifyLeft">
+                            <i class="fa fa-align-left"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="justifyCenter">
-                    <i class="fa fa-align-center"></i>
-                </button>
+                        <button type="button" class="btn" data-element="justifyCenter">
+                            <i class="fa fa-align-center"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="justifyRight">
-                    <i class="fa fa-align-right"></i>
-                </button>
+                        <button type="button" class="btn" data-element="justifyRight">
+                            <i class="fa fa-align-right"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="justifyFull">
-                    <i class="fa fa-align-justify"></i>
-                </button>
+                        <button type="button" class="btn" data-element="justifyFull">
+                            <i class="fa fa-align-justify"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="insertImage">
-                    <i class="fa fa-image"></i>
-                </button>
+                        <button type="button" class="btn" data-element="insertImage">
+                            <i class="fa fa-image"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="h1">
-                    <i class="fa fa-plus"></i>
-                </button>
+                        <button type="button" class="btn" data-element="h1">
+                            <i class="fa fa-plus"></i>
+                        </button>
 
-                <button type="button" class="btn" data-element="p">
-                    <i class="fa fa-minus"></i>
-                </button>
+                        <button type="button" class="btn" data-element="p">
+                            <i class="fa fa-minus"></i>
+                        </button>
 
 
 
-            </div>
-            <script src="https://kit.fontawesome.com/1e1383a7cf.js" crossorigin="anonymous"></script>
-            <div class="content" id="texto" contenteditable="true"></div>
-            <div class="text_editor_botton">
-                <span id="palavras">0 palavras</span>
-                <span id="caracteres">0 caracteres</span>
+                    </div>
+                    <div class="content" id="texto" contenteditable="true"></div>
+                    <div class="text_editor_botton">
+                        <span id="palavras">0 palavras</span>
+                        <span id="caracteres">0 caracteres</span>
+                    </div>
+                </div>
             </div>
         </div>
-       
+        </div>
 
     </div>
 
     
 </body>
 <script src="script.js"></script>
+<script src="https://kit.fontawesome.com/1e1383a7cf.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </html>
