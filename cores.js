@@ -10,13 +10,13 @@ const main = document.getElementById("main");
 const header = document.getElementById("header");
 
 
-const botoes = document.getElementById("btn")
+const botoes = document.querySelectorAll(".btn")
 
-cor_letra = "#0D2B45";
-cor_clara = "#FFD4A3";
-cor_escura = "#D08159";
-cor_fundo = "#0D2B45";
-cor_escrita = "#0D2B45";
+let cor_letra = "#0D2B45";
+let cor_clara = "#FFD4A3";
+let cor_escura = "#D08159";
+let cor_fundo = "#0D2B45";
+let cor_escrita = "#0D2B45";
 
 paletaMarrom.addEventListener("click", () =>{
     cor_clara = "#FFD4A3"

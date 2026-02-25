@@ -6,15 +6,13 @@ elements.forEach(element => {
             let command = element.dataset['element'];
             if (command == "createLink"){
                 let url = prompt("Enter the link here:", "http://");
-                document.execCommand(command, false, url);
+                if (url){
+                    document.execCommand(command, false, url);
+                }
             }
             
-            else if (command === "h1"){
-                document.execCommand('formatBlock', false, '<h1>');
-            }
-
-            else if (command === "p"){
-                document.execCommand('formatBlock', false, '<p>');
+            else if (command === "h1" || command === "p") {
+                document.execCommand('formatBlock', false, command);
             }
 
             else{

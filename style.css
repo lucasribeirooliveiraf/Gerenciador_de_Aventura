@@ -3,11 +3,27 @@ body{
     padding: 0;
     margin: 0;
     transform: scale(1.3);
+    z-index: -2;
+}
+
+#bg_layer{
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
 }
 
 .row{
     top: 50%;   
     transform:  translateY(40%);
+}
+
+.popup{
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background-color: #000000;
 }
 
 .main_content{
@@ -74,4 +90,28 @@ body{
     padding: 5px;
     margin: 0px;
 
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    height: 250px;
+    background: rgb(38, 0, 57);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999;
+    color: rgb(255, 234, 216);
+    border: rgb(255, 207, 165) solid 1px;
+    
+    display: none;
+
+}
+
+.popup input{
+    margin-top: 10px;
+    margin-bottom: 15px;
 }
