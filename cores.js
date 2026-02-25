@@ -10,8 +10,6 @@ const main = document.getElementById("main");
 const header = document.getElementById("header");
 
 
-const botoes = document.querySelectorAll(".btn")
-
 let cor_letra = "#0D2B45";
 let cor_clara = "#FFD4A3";
 let cor_escura = "#D08159";
@@ -80,9 +78,11 @@ function mudar_cor(){
     
     setings.style.color = cor_letra;
     header.style.color = cor_letra;
-    elements.style.color = cor_letra;
+
  
-  
+    salvarPaleta()
 
 };
+
+
 
