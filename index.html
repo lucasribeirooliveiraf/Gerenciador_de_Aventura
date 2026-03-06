@@ -12,7 +12,7 @@
     <div id="bg_layer"></div>
     <div class="container" style="padding: 0%;">
         
-        <div class="row">
+        <div class="row" style="flex-wrap: nowrap;">
         
         <div class="col">
             <aside>
@@ -29,7 +29,7 @@
                         
                     </div>
                     <div class="bg_image">
-                        
+                        <h2>Change Background</h2>
                         <button id="add_image">Change Background Image</button>
                         <button id="remove_image">Remove Background Image</button>
                         <hr>
@@ -102,8 +102,43 @@
                 </div>
             </div>
         </div>
+
+        <div class="col">
+            <aside>
+                <div class="configs_rpg" id="configs_rpg">
+                    <div class="add_pdf">
+                        <h2>Insert a PDF Book</h2>
+                        <hr>
+                        <embed src="" type="application/pdf" width="100%" height="600vh" style="display: none;" id="arquivo_pdf"/>
+                        
+                        <input type="file" name="pdf_book" id="pdf_book" accept=".pdf">
+                        <br>
+                        <hr>
+                    </div>
+                    <div class="rolar_dados">
+                        <h2>Roll Dice</h2>
+                        <button id="dado_d100" onclick="rolar_dados(100)">Roll D100</button>
+                        <p id="d100"></p>
+                        <button id="dado_d20" onclick="rolar_dados(20)">Roll D20</button>
+                        <p id="d20"></p>
+                        <button id="dado_d12" onclick="rolar_dados(12)">Roll D12</button>
+                        <p id="d12"></p>
+                        <button id="dado_d10" onclick="rolar_dados(10)">Roll D10</button>
+                        <p id="d10"></p>
+                        <button id="dado_d8" onclick="rolar_dados(8)">Roll D8</button>
+                        <p id="d8"></p>
+                        <button id="dado_d6" onclick="rolar_dados(6)">Roll D6</button>
+                        <p id="d6"></p>
+                        <button id="dado_d4" onclick="rolar_dados(4)">Roll D4</button>
+                        <p id="d4"></p>
+                    </div>
+                </div>
+
+            </aside>
         </div>
 
+        </div>
+        
     </div>
     <div class="popup" id="popup">
         <h2>CHANGE BACKGROUND</h2>
@@ -117,6 +152,7 @@
     
 </body>
 <script src="script.js"></script>
+<script src="configs_rpg.js"></script>
 <script src="fundo.js"></script>
 <script src="cores.js"></script>
 <script src="https://kit.fontawesome.com/1e1383a7cf.js" crossorigin="anonymous"></script>

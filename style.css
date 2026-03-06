@@ -2,7 +2,7 @@ body{
     --bs-body-bg: #0D2B45;
     padding: 0;
     margin: 0;
-    transform: scale(1.3);
+    transform: scale(1.1);
     z-index: -2;
 }
 
@@ -17,6 +17,7 @@ body{
 .row{
     top: 50%;   
     transform:  translateY(40%);
+    height: 100vh;
 }
 
 .popup{
@@ -28,7 +29,7 @@ body{
 
 .main_content{
     width: 710px;
-    position: absolute;
+    position: flex;
     
     background-color: #FFD4A3;
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.733);
@@ -81,6 +82,18 @@ body{
     margin: 5px;
     padding-right: 10px;
     color: rgba(0, 0, 0, 0.672);
+}
+
+
+.configs_rpg{
+    width: 500px;
+    min-height: 500px;
+    background-color: #D08159;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px;
+    
 }
 
 .content{

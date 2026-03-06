@@ -8,6 +8,7 @@ const paletaRoxa = document.getElementById("pa5");
 const setings = document.getElementById("setings");
 const main = document.getElementById("main");
 const header = document.getElementById("header");
+const config = document.getElementById("configs_rpg")
 
 
 let cor_letra = "#0D2B45";
@@ -73,9 +74,11 @@ function mudar_cor(){
     document.body.style.backgroundColor = cor_fundo;
     setings.style.backgroundColor = cor_escura;
     header.style.backgroundColor = cor_escura;
+    config.style.backgroundColor = cor_escura;
     main.style.backgroundColor = cor_clara;
     main.style.color = cor_escrita;
-    
+
+    config.style.color = cor_letra;
     setings.style.color = cor_letra;
     header.style.color = cor_letra;
 
