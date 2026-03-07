@@ -30,6 +30,7 @@
                     <hr>
                     <h3><button onclick="display_background()"><i class="fa-solid fa-angle-down" id="icone_bg"></i></button>Change Background</h3>
                     <div class="bg_image" id="background_change" style="display: none;">
+                        <hr>
                         <button id="add_image">Change Background Image</button>
                         <button id="remove_image">Remove Background Image</button>
                        
@@ -120,7 +121,7 @@
                     <hr>
                     <h2><button onclick="display_roll()"><i class="fa-solid fa-angle-down" id="icone_dice"></i></button>Roll Dice</h2>
                     <div class="rolar_dados" style="display: none;" id="dados">
-                        <br>
+                        <hr>
                         <button id="dado_d100" onclick="rolar_dados(100)">Roll D100</button>
                         <p id="d100"></p>
                         <button id="dado_d20" onclick="rolar_dados(20)">Roll D20</button>
@@ -136,8 +137,9 @@
                         <button id="dado_d4" onclick="rolar_dados(4)">Roll D4</button>
                         <p id="d4"></p>
                     </div>
+                    <hr>
                 </div>
-
+                
             </aside>
         </div>
 
@@ -163,4 +165,5 @@
 <script src="https://kit.fontawesome.com/1e1383a7cf.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="salvar_dados.js"></script>
+<script src="salvar_dados_pesados.js"></script>
 </html>
