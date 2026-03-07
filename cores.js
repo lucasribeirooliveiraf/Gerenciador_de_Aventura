@@ -16,6 +16,7 @@ let cor_clara = "#FFD4A3";
 let cor_escura = "#D08159";
 let cor_fundo = "#0D2B45";
 let cor_escrita = "#0D2B45";
+let cor_destaque = "#28008e";
 
 paletaMarrom.addEventListener("click", () =>{
     cor_clara = "#FFD4A3"
@@ -23,6 +24,7 @@ paletaMarrom.addEventListener("click", () =>{
     cor_escura = "#D08159"
     cor_fundo = "#0D2B45"
     cor_escrita = "#0D2B45"
+    cor_destaque = "#28008e";
     mudar_cor()
 });
 
@@ -32,6 +34,7 @@ paletaVermelha.addEventListener("click", () =>{
     cor_letra = "#ffcccc"
     cor_fundo = "#3A211C"
     cor_escrita = "#2a0303"
+    cor_destaque = "#8e0000";
     mudar_cor()
     
 });
@@ -42,6 +45,7 @@ paletaPreta.addEventListener("click", () =>{
     cor_letra = "#fafbf6"
     cor_fundo = "#0f0f1b"
     cor_escrita = "#291f1f"
+    cor_destaque = "#1d0056";
 
     mudar_cor()
     
@@ -54,6 +58,7 @@ paletaDourada.addEventListener("click", () =>{
     cor_letra = "#ffecd6"
     cor_fundo = "#25213e"
     cor_escrita = "#333427"
+    cor_destaque = "#63025b";
 
     mudar_cor()
     
@@ -65,6 +70,8 @@ paletaRoxa.addEventListener("click", () =>{
     cor_letra = "#cb91f2"
     cor_fundo = "#0a0a1a"
     cor_escrita = "#ff00ff"
+    cor_destaque = "#05d4d7";
+
 
     mudar_cor()
     
@@ -82,10 +89,12 @@ function mudar_cor(){
     setings.style.color = cor_letra;
     header.style.color = cor_letra;
 
+    const negrito = document.querySelectorAll('#main b');
+
+    negrito.forEach(b =>{
+        b.style.color = cor_destaque;
+    });
  
     salvarPaleta()
 
 };
-
-
-
