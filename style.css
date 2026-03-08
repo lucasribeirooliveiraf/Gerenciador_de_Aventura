@@ -97,11 +97,12 @@ body{
 }
 
 .content{
-    
+    max-height: 500px;
     min-height: 300px;
     border: none;
     padding: 5px;
     margin: 0px;
+    overflow-y: scroll;
 
 }
 
