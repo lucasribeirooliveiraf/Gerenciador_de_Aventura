@@ -1,7 +1,24 @@
+let mostrar_notas = true
 let mostrar_cores = true
 let mostrar_bg = true
 let mostrar_pdf = true
 let mostrar_dados = true
+
+function display_notas(){
+    const notas = document.getElementById("notas")
+    const icone_nota = document.getElementById("icone_nota")
+    if (mostrar_notas == false){
+        mostrar_notas = true
+        notas.style.display = "none"
+        icone_nota.className = "fa-solid fa-angle-down"
+    }
+    else{
+        mostrar_notas = false
+        notas.style.display = "block"
+        icone_nota.className = "fa-solid fa-angle-up"
+    }
+
+}
 
 function display_color(){
     const cores = document.getElementById("cores")
@@ -66,3 +83,5 @@ function display_roll(){
     }
 
 }
+
+

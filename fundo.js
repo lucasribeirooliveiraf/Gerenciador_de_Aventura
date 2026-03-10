@@ -4,10 +4,11 @@ const adicionar_imagem = document.getElementById("add_image");
 const remove_imagem = document.getElementById("remove_image");
 
 const popup = document.getElementById("popup");
+const popup_notas = document.getElementById("popup_nota");
 
 const input_bg_image = document.getElementById("input_background_image");
 const confirmar = document.getElementById("confirmar_bg");
-const retornar = document.getElementById("retornar");
+
 
 const opacidade = document.getElementById("opacity")
 
@@ -39,10 +40,15 @@ opacidade.addEventListener("input",() =>{
     background.style.opacity = opacidade.value;
 })
 
-retornar.addEventListener("click",() =>{
+
+function fechar_popup(){
     popup.style.display = "none";
-})
+    popup_notas.style.display = "none";
+
+}
+
 
 remove_imagem.addEventListener("click", () => {
     background.style.backgroundImage = "none";
+    deletarImagem()
 });

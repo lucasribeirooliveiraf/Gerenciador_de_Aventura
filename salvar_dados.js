@@ -1,10 +1,25 @@
 
 function salvar_texto(){
+    const titulo = document.getElementById("titulo_da_nota")
     const texto = document.getElementById("texto");
+    
+    
 
     texto.addEventListener("input", () => {
         const conteudo = texto.innerHTML;
+        const conteudo_titulo = titulo.innerHTML;
+        const id_aberto = notaAtual;
+        
+        localStorage.setItem("titulo_salvo", conteudo_titulo)
         localStorage.setItem("texto_salvo", conteudo)
+        localStorage.setItem("id_aberto", id_aberto)
+
+        const Nota = {
+        id: id_aberto,
+        titulo: conteudo_titulo,
+        conteudo:conteudo
+        };
+        salvarNota(Nota)
     });
 };
 salvar_texto()
@@ -39,10 +54,13 @@ function carregarPaleta(){
 
 
 window.onload = function (){
+    const titulo = document.getElementById("titulo_da_nota")
     const texto = document.getElementById("texto");
+    const tituloSalvo = localStorage.getItem("titulo_salvo");
     const conteudoSalvo = localStorage.getItem("texto_salvo");
 
     if (conteudoSalvo) {
+        titulo.innerHTML = tituloSalvo;
         texto.innerHTML = conteudoSalvo;
     }
     carregarPaleta();

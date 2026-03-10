@@ -1,19 +1,25 @@
-// abir database
 let database;
-const request = window.indexedDB.open("Gerenciador_rpg", 1);
+let notaAtual;
+const request = window.indexedDB.open("Gerenciador_rpg", 2);
 
 request.onerror = (event) => {
     alert("Ocorreu algum erro com a database!");
     console.error(`Database error: ${event.target.error?.message}`);
-  // Do something with request.error!
+
 };
 
 request.onupgradeneeded = (event) => {
-  // Save the IDBDatabase interface
-  database = event.target.result;
 
-  // Create an objectStore for this database
-  const objectStore = database.createObjectStore("Imagem_fundo", { keyPath: "id" });
+    database = event.target.result;
+
+ 
+    if(!database.objectStoreNames.contains("Imagem_fundo")){
+        database.createObjectStore("Imagem_fundo", { keyPath: "id" });
+    }
+
+    if(!database.objectStoreNames.contains("notas")){
+        database.createObjectStore("notas", { keyPath: "id" });
+    }
 };
 
 document.getElementById("input_background_image").addEventListener("change", function () {
@@ -41,6 +47,17 @@ function salvarImagem(file) {
     store.put(imagem);
 }
 
+function deletarImagem(){
+    const transaction = database.transaction(["Imagem_fundo"], "readwrite");
+    const store = transaction.objectStore("Imagem_fundo");
+
+    const deleteRequest = store.delete("background");
+  
+    deleteRequest.onsuccess = function() {
+        console.log("Registro deletado com sucesso!");
+  };
+}
+
 function carregarImagem() {
 
     const transaction = database.transaction(["Imagem_fundo"], "readonly");
@@ -57,7 +74,6 @@ function carregarImagem() {
             const url = URL.createObjectURL(resultado.arquivo);
             console.log(`url(${url})`)
             background.style.backgroundImage = `url(${url})`;
-            background.style.backgroundImage = `url("${url}")`;
             background.style.backgroundSize = "cover";
             background.style.backgroundPosition = "center";
             background.style.backgroundRepeat = "no-repeat";
@@ -65,11 +81,107 @@ function carregarImagem() {
     };
 }
 
+function salvarNota(nota) {
+    if (!database) {
+        console.error("Database ainda não carregou");
+        return;
+    }
+    const transaction = database.transaction(["notas"], "readwrite");
+
+    const store = transaction.objectStore("notas");
+
+    store.put(nota);
+
+}
+
+function abrirNota(id) {
+
+    const transaction = database.transaction(["notas"], "readonly");
+
+    const store = transaction.objectStore("notas");
+
+    const request = store.get(id);
+
+    request.onsuccess = function() {
+
+        const nota = request.result;
+        notaAtual = nota.id;
+        const titulo = document.getElementById("titulo_da_nota");
+        const texto = document.getElementById("texto");
+        titulo.innerHTML = nota.titulo;
+        texto.innerHTML = nota.conteudo;
+
+
+    };
+
+}
+
+function carregarNotas(){
+
+    const transaction = database.transaction(["notas"], "readonly");
+    const store = transaction.objectStore("notas");
+
+    const request = store.getAll();
+
+    request.onsuccess = function(){
+
+        const notas = request.result;
+        
+        if(notas.length === 0){
+
+            const notaPadrao = criarNotaPadrao();
+
+            adicionarNotaLista(notaPadrao);
+
+            abrirNota(notaPadrao.id);
+
+            return;
+        }
+        const lista = document.getElementById("colocar_notas");
+
+        lista.innerHTML = "";
+
+        notas.forEach(nota => {
+
+            adicionarNotaLista(nota);
+
+        });
+
+    };
+
+}
+
+function adicionarNotaLista(nota){
+
+    const lista = document.getElementById("colocar_notas");
+
+    const botao = document.createElement("button");
+    botao.style.display = "block"
+
+    botao.textContent = nota.titulo || "Nota";
+
+    botao.onclick = () => abrirNota(nota.id);
+
+    lista.appendChild(botao);
+
+}
 
 request.onsuccess = function (event) {
     database = event.target.result;
 
     carregarImagem();
+    carregarNotas()
 };
 
+function criarNotaPadrao(){
 
+    const nota = {
+        id:  Date.now(),
+        titulo: "First Adventure",
+        conteudo: "Write here your tale!"
+    };
+
+    salvarNota(nota);
+
+    return nota;
+}
