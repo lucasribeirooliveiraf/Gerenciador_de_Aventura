@@ -6,23 +6,47 @@ function salvar_texto(){
     
 
     texto.addEventListener("input", () => {
-        const conteudo = texto.innerHTML;
-        const conteudo_titulo = titulo.innerHTML;
-        const id_aberto = notaAtual;
-        
-        localStorage.setItem("titulo_salvo", conteudo_titulo)
-        localStorage.setItem("texto_salvo", conteudo)
-        localStorage.setItem("id_aberto", id_aberto)
+        salvar_conteudo()
+        console.log("titulo")
 
-        const Nota = {
+    });
+
+    
+    titulo.addEventListener("input", () => {
+        console.log("titulo")
+        salvar_conteudo()
+    });
+        
+window.onload = function (){
+    salvar_texto();
+}
+
+function salvar_conteudo(){
+    const conteudo = texto.innerHTML;
+    const conteudo_titulo = titulo.innerHTML;
+    let id_aberto = notaAtual;
+    
+    localStorage.setItem("titulo_salvo", conteudo_titulo)
+    localStorage.setItem("texto_salvo", conteudo)
+    if (id_aberto != undefined){
+        localStorage.setItem("id_aberto", id_aberto)
+    }
+    else{
+        id_aberto = notaAtual
+        localStorage.setItem("id_aberto", id_aberto)
+    }
+    console.log(conteudo_titulo)
+    const Nota = {
         id: id_aberto,
         titulo: conteudo_titulo,
         conteudo:conteudo
-        };
-        salvarNota(Nota)
-    });
+    };
+    salvarNota(Nota)
+    }
 };
-salvar_texto()
+
+
+
 
 function salvarPaleta() {
     const paleta = {

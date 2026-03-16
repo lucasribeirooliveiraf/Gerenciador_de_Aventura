@@ -49,6 +49,16 @@ body{
     border: none;
     border-radius: 3px;
     padding: 8px;
+    background-color: transparent;
+}
+
+
+.configs_rpg button{
+    margin: 15px;
+    border: none;
+    border-radius: 3px;
+    padding: 8px;
+    background-color: transparent;
 }
 
 

@@ -1,7 +1,6 @@
 function adicionar_pdf(){
     const adicionar_livro = document.getElementById("pdf_book");
     const pdf = document.getElementById("arquivo_pdf");
-    console.log(adicionar_livro.value)
     adicionar_livro.addEventListener("change", () => {
         const arquivo = adicionar_livro.files[0];
 
