@@ -44,6 +44,7 @@ opacidade.addEventListener("input",() =>{
 function fechar_popup(){
     popup.style.display = "none";
     popup_notas.style.display = "none";
+    popup_apagar.style.display = "none";
 
 }
 

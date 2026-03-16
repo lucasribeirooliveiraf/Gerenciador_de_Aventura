@@ -163,7 +163,11 @@ function adicionarNotaLista(nota){
     botao.onclick = () => abrirNota(nota.id);
 
     lista.appendChild(botao);
+    const botao_apagar = document.createElement("button")
+    botao_apagar.textContent = "Delete"
+    botao_apagar.onclick = () => confirmar_apagar_dados();
 
+    botao.appendChild(botao_apagar)
 }
 
 request.onsuccess = function (event) {

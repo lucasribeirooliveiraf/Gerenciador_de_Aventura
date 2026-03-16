@@ -24,4 +24,10 @@ function criar_nota(){
     nova_nota.onclick = () => abrirNota(novaNota.id);
     add_nota.appendChild(nova_nota);
 
+    const botao_apagar = document.createElement("button")
+    botao_apagar.textContent = "Delete"
+    botao_apagar.onclick = () => confirmar_apagar_dados();
+
+    nova_nota.appendChild(botao_apagar)
+
 }
