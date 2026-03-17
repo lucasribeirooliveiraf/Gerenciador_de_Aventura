@@ -79,6 +79,7 @@ paletaRoxa.addEventListener("click", () =>{
 
 function mudar_cor(){
     document.body.style.backgroundColor = cor_fundo;
+    
     setings.style.backgroundColor = cor_escura;
     header.style.backgroundColor = cor_escura;
     config.style.backgroundColor = cor_escura;
@@ -90,10 +91,30 @@ function mudar_cor(){
     header.style.color = cor_letra;
 
     const negrito = document.querySelectorAll('#main b');
+    const botoes = document.querySelectorAll('.setings button');
+    const botoes2 = document.querySelectorAll('.configs_rpg button');
 
     negrito.forEach(b =>{
         b.style.color = cor_destaque;
     });
+
+    botoes.forEach(btt =>{
+        btt.style.color = cor_escrita;
+        btt.style.backgroundColor = cor_clara;
+    });
+    botoes2.forEach(btt =>{
+        btt.style.color = cor_escrita;
+        btt.style.backgroundColor = cor_clara;
+    });
+
+    paletaMarrom.style="background-color: #FFD4A3; color: #28008e;";
+    paletaVermelha.style="background-color: #ffc1c1; color: #8e0000;";
+    paletaPreta.style="background-color: #c6b7be; color: #1d0056;";
+    paletaDourada.style="background-color: #ffb873; color: #63025b;";
+    paletaRoxa.style="background-color: #5d3eb3; color: #05d4d7;";
+
+    
+
  
     salvarPaleta();
 
