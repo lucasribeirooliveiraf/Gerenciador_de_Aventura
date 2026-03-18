@@ -12,7 +12,7 @@ elements.forEach(element => {
             }
             
             else if (command === "h1" || command === "p") {
-                document.execCommand('formatBlock', false, command);
+                document.execCommand('formatBlock',true, command);
             }
 
             else{

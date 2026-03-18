@@ -22,6 +22,7 @@ function salvar_texto(){
         };
         console.log(Nota.id)
         salvarNota(Nota);
+        carregarNotas()
 
     }
 

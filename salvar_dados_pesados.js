@@ -146,6 +146,7 @@ function carregarNotas(){
             adicionarNotaLista(nota);
 
         });
+        mudar_cor();
 
     };
 
@@ -168,6 +169,8 @@ function adicionarNotaLista(nota){
     botao_apagar.onclick = () => confirmar_apagar_dados();
 
     botao.appendChild(botao_apagar)
+    mudar_cor();
+   
 }
 
 request.onsuccess = function (event) {
